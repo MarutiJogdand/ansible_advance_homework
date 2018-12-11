@@ -1,10 +1,30 @@
 ---
 
 # tasks file for osp.servers
-- name: Create new server instances and attaches them a network and passes metadata to the instance
-
+- name: Create a new instance and attaches to a network and passes metadata to the instance
+  os_server:
+       state: present
+       auth:
+         auth_url: http://192.168.0.20:5000/
+         username: admin
+         password: r3dh4t1!
+         project_name: admin
+       name: myfirstvm
+       image: 4f905f38-e52a-43d2-b6ec-754a13ffb529
+       key_name: ~/.ssh/openstack.pem
+       timeout: 200
+       flavor: 4
+       nics:
+         - net-id: 34605f38-e52a-25d2-b6ec-754a13ffb723
+         - net-name: another_network
+       meta:
+         hostname: ansible-my-vm
+         group: uge_master
 
 - name: Add floating IP to Servers
+- os_floating_ip:
+     cloud: ospcloud
+     server: myfirstvm
    
-
-- name: Wait for server to be available
+- name: Wait 600 seconds for target connection to become reachable/usable
+  wait_for_connection:
