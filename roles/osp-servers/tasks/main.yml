@@ -9,8 +9,8 @@
          username: admin
          password: r3dh4t1!
          project_name: admin
-       name: myfirstvm
-       image: 4f905f38-e52a-43d2-b6ec-754a13ffb529
+       name: rhel-guest
+       image: rhel-guest-image-7.2-20151102.0.x86_64.qcow2
        key_name: ~/.ssh/openstack.pem
        timeout: 200
        flavor: 4
