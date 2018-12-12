@@ -9,9 +9,9 @@
          username: admin
          password: r3dh4t1!
          project_name: admin
-       name: rhel-guest
-       image: rhel.qcow2
-       key_name: ~/.ssh/openstack.pem
+       name: rhel-server
+       image: rhel-guest
+       key_name: /root/.ssh/openstack.pem
        timeout: 200
        flavor: 4
        nics:
@@ -24,7 +24,7 @@
 - name: Add floating IP to Servers
   os_floating_ip:
      cloud: ospcloud
-     server: myfirstvm
+     server: rhel-server
    
 - name: Wait 600 seconds for target connection to become reachable/usable
   wait_for_connection:
