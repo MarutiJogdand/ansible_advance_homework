@@ -3,26 +3,18 @@
 # tasks file for osp.servers
 - name: Create a new instance and attaches to a network and passes metadata to the instance
   os_server:
-       state: present
-       auth:
-         auth_url: http://192.168.0.20:5000/
-         username: admin
-         password: r3dh4t1!
-         project_name: admin
-       name: rhel-server
-       image: rhel-guest
-       region_name: RegionOne
-       key_name: ansible_ssh
-       availability_zone: az2
-       security_groups: apps
-       timeout: 200
-       flavor: 4
-       auto_ip: yes
+        state: present
+        cloud: ospcloud
+        name: first-instance
+        image: rhel-guest
+        key_name: ansible_ssh
+        timeout: 200
+        flavor: m2.small
+        network: ext_network
+        auto_ip: yes
+        security_groups:
+          - apps
 
-- name: Add floating IP to Servers
-  os_floating_ip:
-     cloud: ospcloud
-     server: rhel-server
    
 - name: Wait 600 seconds for target connection to become reachable/usable
   wait_for_connection:
