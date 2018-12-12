@@ -10,7 +10,7 @@
          password: r3dh4t1!
          project_name: admin
        name: rhel-guest
-       image: rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+       image: rhel.qcow2
        key_name: ~/.ssh/openstack.pem
        timeout: 200
        flavor: 4
