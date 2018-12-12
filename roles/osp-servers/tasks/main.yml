@@ -5,7 +5,7 @@
   os_server:
         state: present
         cloud: ospcloud
-        name: first-instance
+        name: first-instance-1
         image: rhel-guest
         key_name: ansible_ssh
         timeout: 200
