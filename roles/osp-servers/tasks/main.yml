@@ -16,7 +16,7 @@
        flavor: 4
        nics:
          - net-id: 34605f38-e52a-25d2-b6ec-754a13ffb723
-         - net-name: another_network
+         - net-name: ext_network
        meta:
          hostname: ansible-my-vm
          group: uge_master
