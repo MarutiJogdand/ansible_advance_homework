@@ -3,7 +3,6 @@
 
 - name: Create new server instances and attaches them a network and passes metadata to the instance
   os_server:
-<<<<<<< HEAD
     cloud: ospcloud
     name: "{{ item.0.name }}"
     image: "{{ item.0.image }}"
@@ -46,13 +45,6 @@
   tags:
     - test.servers
 
-# - name: Print records  
-#   debug:
-#     var: item.name
-#   with_items: 
-#   - "{{ openstack_servers}}"
-#   tags:
-#     - test.servers
 
 - name: Wait for server to be available
   wait_for:
@@ -66,34 +58,4 @@
   tags:
     - test.servers
 
-# tasks file for osp.servers
-#- name: Create a new instance and attaches to a network and passes metadata to the instance
-#  os_server:
-#        state: present
-#        cloud: ospcloud
- #       name: first-instance
-  #      image: rhel-guest
-#        key_name: ansible_ssh
-#        timeout: 200
-#        flavor: m2.small
-#        network: ext_network
-#        auto_ip: yes
-#        security_groups:
-#          - apps
-=======
-        state: present
-        cloud: ospcloud
-        name: first-instance-1
-        image: rhel-guest
-        key_name: ansible_ssh
-        timeout: 200
-        flavor: m2.small
-        network: ext_network
-        auto_ip: yes
-        security_groups:
-          - apps
->>>>>>> 7e3c36062de0e99edd65c41bdd61051ec3ea9597
 
-   
-#- name: Wait 600 seconds for target connection to become reachable/usable
-#  wait_for_connection:
