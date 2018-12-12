@@ -22,7 +22,7 @@
          group: uge_master
 
 - name: Add floating IP to Servers
-- os_floating_ip:
+  os_floating_ip:
      cloud: ospcloud
      server: myfirstvm
    
