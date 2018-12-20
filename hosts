@@ -1,5 +1,5 @@
 [bastion_tower]
-bastion.a11e.example.opentlc.com
+bastion.a11e.example.opentlc.com ansible_connection=local
 
 [workstation]
 workstation-4a95.rhpds.opentlc.com
